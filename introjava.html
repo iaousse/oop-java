@@ -1,0 +1,971 @@
+
+<!DOCTYPE html>
+
+
+<html lang="fr" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Rappel des bases de Java &#8212; Introduction à la Programmation Orientée Objet avec Java</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="_static/documentation_options.js?v=72dce1d2"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/translations.js?v=041d0952"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'introjava';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Exercices" href="exo1.html" />
+    <link rel="prev" title="Outil de Travail" href="outil.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="fr"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Introduction à la Programmation Orientée Objet avec Java - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="Introduction à la Programmation Orientée Objet avec Java - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Recherche</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Introduction à la Programmation Orientée Objet avec Java
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="outil.html">Outil de Travail</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Rappel des bases de Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exo1.html">Exercices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operations.html">Opérations et Comparaisons en Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="boucle.html">Structures de Contrôle, Tableaux, Méthodes et Gestion des Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oop.html">Programmation Orientée Objet (POO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Dépôt source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintrojava.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Ouvrez un problème"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Téléchargez cette page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/introjava.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Télécharger le fichier source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimer au format PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Mode plein écran"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Rappel des bases de Java</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenu </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-et-caracteristiques">1. Définition et caractéristiques</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quest-ce-que-java">Qu’est-ce que Java ?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-principes-fondateurs-de-java">Les Principes Fondateurs de Java</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#write-once-run-anywhere-wora">1.1 Write Once, Run Anywhere (WORA)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#java-virtual-machine-jvm">1.2 Java Virtual Machine (JVM)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#compilation-et-bytecode">1.3 Compilation et Bytecode</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristiques-de-java">Caractéristiques de Java</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langage-oriente-objet">1.4 Langage Orienté Objet</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#securite-et-robustesse">1.5 Sécurité et Robustesse</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#gestion-automatique-de-la-memoire">1.6 Gestion Automatique de la Mémoire</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#multithreading-et-concurrence">1.7 Multithreading et Concurrence</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-de-base-d-un-programme">2. Structure de base d’un programme</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-de-structure-de-base">Exemple de Structure de Base</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#elements-de-la-structure">Éléments de la Structure</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#classe-publique">2.1 Classe Publique</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#la-methode-main">2.2 La Méthode <code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#les-commentaires">2.3 Les Commentaires</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resume-de-la-structure-de-base">Résumé de la Structure de Base</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-de-donnees">3. Types de données</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-primitifs">Types Primitifs</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#explications-des-types-primitifs">Explications des Types Primitifs</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-reference">Types Référence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-d-utilisation">Exemple d’utilisation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-et-constantes">4. Variables et constantes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#declaration-de-variables">Déclaration de Variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-de-variables">Exemple de Variables</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regles-de-nommage-des-variables">Règles de Nommage des Variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#declaration-de-constantes">Déclaration de Constantes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-de-constantes">Exemple de Constantes</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-complet-variables-et-constantes">Exemple Complet : Variables et Constantes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resume">Résumé</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="rappel-des-bases-de-java">
+<h1>Rappel des bases de Java<a class="headerlink" href="#rappel-des-bases-de-java" title="Lien vers cette rubrique">#</a></h1>
+<section id="definition-et-caracteristiques">
+<h2>1. Définition et caractéristiques<a class="headerlink" href="#definition-et-caracteristiques" title="Lien vers cette rubrique">#</a></h2>
+<p>Java est un langage de programmation polyvalent et orienté objet, développé pour répondre aux besoins de la programmation multiplateforme. Il s’agit de l’un des langages les plus populaires et les plus largement utilisés dans le monde, principalement en raison de sa robustesse, de sa sécurité, et de sa capacité à fonctionner sur divers systèmes d’exploitation sans nécessiter de modifications du code source.</p>
+<section id="quest-ce-que-java">
+<h3>Qu’est-ce que Java ?<a class="headerlink" href="#quest-ce-que-java" title="Lien vers cette rubrique">#</a></h3>
+<div class="admonition-definition admonition">
+<p class="admonition-title">Définition</p>
+<p>Java est un langage de programmation <strong>orienté objet</strong> qui a été initialement développé par Sun Microsystems (désormais sous la propriété d’Oracle) en <strong>1995</strong>. Il est conçu pour être simple, sécurisé et compatible avec de multiples plateformes, rendant son utilisation idéale pour les applications web, mobiles, et les systèmes embarqués.</p>
+</div>
+<p>Java est souvent décrit comme un langage de niveau intermédiaire, car il est à la fois proche du matériel, par sa syntaxe simple et optimisée, et indépendant des systèmes d’exploitation, grâce à la <strong>Java Virtual Machine (JVM)</strong>.</p>
+</section>
+<section id="les-principes-fondateurs-de-java">
+<h3>Les Principes Fondateurs de Java<a class="headerlink" href="#les-principes-fondateurs-de-java" title="Lien vers cette rubrique">#</a></h3>
+<p>Java repose sur plusieurs principes clés qui ont influencé sa conception et son développement, permettant aux développeurs de bénéficier de sa portabilité et de sa flexibilité.</p>
+<section id="write-once-run-anywhere-wora">
+<h4>1.1 Write Once, Run Anywhere (WORA)<a class="headerlink" href="#write-once-run-anywhere-wora" title="Lien vers cette rubrique">#</a></h4>
+<p>L’un des principes fondamentaux de Java est le concept <strong>WORA (Write Once, Run Anywhere)</strong>, qui signifie « écrire une fois, exécuter partout ». Ce principe indique qu’un programme Java, une fois écrit et compilé, peut s’exécuter sur n’importe quel système d’exploitation équipé de la <strong>JVM (Java Virtual Machine)</strong>, sans nécessiter de modification du code source.</p>
+<div class="admonition-avantage-de-wora admonition">
+<p class="admonition-title">Avantage de WORA</p>
+<p>Le principe WORA fait de Java un langage indépendant des plateformes, permettant aux développeurs de déployer leurs applications sur différentes machines sans avoir à adapter le code à chaque système d’exploitation.</p>
+</div>
+</section>
+<section id="java-virtual-machine-jvm">
+<h4>1.2 Java Virtual Machine (JVM)<a class="headerlink" href="#java-virtual-machine-jvm" title="Lien vers cette rubrique">#</a></h4>
+<p>La <strong>JVM</strong> est un élément essentiel de la plateforme Java, jouant un rôle fondamental dans l’indépendance de Java par rapport aux plateformes matérielles et logicielles.</p>
+<div class="admonition-definition admonition">
+<p class="admonition-title">Définition</p>
+<p>La <strong>Java Virtual Machine (JVM)</strong> est une machine virtuelle qui permet d’exécuter le code Java. Elle interprète le bytecode (code intermédiaire de Java) et l’exécute sur le système d’exploitation hôte.</p>
+</div>
+<p>Le bytecode Java est un code intermédiaire généré par le compilateur Java. Contrairement aux autres langages qui se compilent directement en langage machine spécifique à un système d’exploitation, Java est compilé en bytecode, lequel est ensuite interprété par la JVM. Ce bytecode garantit que le même code source Java fonctionnera sur différents systèmes d’exploitation (Windows, macOS, Linux, etc.) tant que la JVM est présente.</p>
+</section>
+<section id="compilation-et-bytecode">
+<h4>1.3 Compilation et Bytecode<a class="headerlink" href="#compilation-et-bytecode" title="Lien vers cette rubrique">#</a></h4>
+<p>L’un des aspects uniques de Java est son processus de compilation en <strong>bytecode</strong>. Ce processus permet de s’assurer que le programme Java est indépendant de la plateforme.</p>
+<ol class="arabic simple">
+<li><p><strong>Écriture du Code Source</strong> : Le code source Java est écrit dans des fichiers <code class="docutils literal notranslate"><span class="pre">.java</span></code>.</p></li>
+<li><p><strong>Compilation</strong> : Le compilateur Java (<code class="docutils literal notranslate"><span class="pre">javac</span></code>) convertit le code source en bytecode, un langage intermédiaire indépendant de la plateforme, stocké dans des fichiers <code class="docutils literal notranslate"><span class="pre">.class</span></code>.</p></li>
+<li><p><strong>Interprétation par la JVM</strong> : Lors de l’exécution, la JVM interprète le bytecode et le convertit en instructions machine pour le système d’exploitation hôte.</p></li>
+</ol>
+<div class="admonition-bytecode-avantages-et-securite admonition">
+<p class="admonition-title">Bytecode : Avantages et Sécurité</p>
+<p>Le bytecode offre plusieurs avantages :</p>
+<ul class="simple">
+<li><p><strong>Portabilité</strong> : Grâce à la JVM, le même bytecode peut être exécuté sur différentes plateformes.</p></li>
+<li><p><strong>Sécurité</strong> : Le bytecode est vérifié par la JVM avant d’être exécuté, limitant les risques de comportements indésirables et renforçant la sécurité.</p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="caracteristiques-de-java">
+<h3>Caractéristiques de Java<a class="headerlink" href="#caracteristiques-de-java" title="Lien vers cette rubrique">#</a></h3>
+<p>Java se distingue par plusieurs caractéristiques qui le rendent adapté pour des projets variés, de la simple application de bureau aux systèmes distribués complexes.</p>
+<section id="langage-oriente-objet">
+<h4>1.4 Langage Orienté Objet<a class="headerlink" href="#langage-oriente-objet" title="Lien vers cette rubrique">#</a></h4>
+<p>Java est intrinsèquement un langage de programmation <strong>orienté objet (POO)</strong>, ce qui signifie que tout est structuré autour des objets et des classes. La POO facilite la modélisation de concepts réels en code et permet une organisation modulaire, facilitant la maintenance et la réutilisabilité.</p>
+<p>Les principes fondamentaux de la POO en Java incluent :</p>
+<ul class="simple">
+<li><p><strong>Encapsulation</strong> : Regroupe les données et les méthodes dans des classes, et contrôle l’accès à ces données.</p></li>
+<li><p><strong>Héritage</strong> : Permet de créer des classes dérivées qui héritent des propriétés et comportements d’une classe existante.</p></li>
+<li><p><strong>Polymorphisme</strong> : Permet aux objets de prendre plusieurs formes, ce qui favorise la flexibilité et l’extensibilité du code.</p></li>
+<li><p><strong>Abstraction</strong> : Simplifie la complexité en ne montrant que les détails essentiels et en cachant l’implémentation interne.</p></li>
+</ul>
+</section>
+<section id="securite-et-robustesse">
+<h4>1.5 Sécurité et Robustesse<a class="headerlink" href="#securite-et-robustesse" title="Lien vers cette rubrique">#</a></h4>
+<p>Java est conçu pour être un langage sécurisé et robuste. La JVM offre une couche de sécurité supplémentaire en vérifiant le bytecode avant l’exécution, et en limitant l’accès à certaines ressources du système pour éviter les erreurs et les comportements dangereux.</p>
+</section>
+<section id="gestion-automatique-de-la-memoire">
+<h4>1.6 Gestion Automatique de la Mémoire<a class="headerlink" href="#gestion-automatique-de-la-memoire" title="Lien vers cette rubrique">#</a></h4>
+<p>Java intègre un <strong>ramasse-miettes</strong> (garbage collector), un processus qui gère automatiquement la libération de la mémoire inutilisée. Cela signifie que Java surveille et récupère la mémoire occupée par des objets qui ne sont plus utilisés, ce qui réduit les risques de fuite de mémoire et améliore la gestion des ressources.</p>
+</section>
+<section id="multithreading-et-concurrence">
+<h4>1.7 Multithreading et Concurrence<a class="headerlink" href="#multithreading-et-concurrence" title="Lien vers cette rubrique">#</a></h4>
+<p>Java prend en charge le <strong>multithreading</strong>, permettant d’exécuter plusieurs tâches simultanément dans un seul programme. Cela est particulièrement utile pour les applications complexes nécessitant une exécution parallèle, comme les serveurs web ou les jeux.</p>
+</section>
+</section>
+</section>
+<section id="structure-de-base-d-un-programme">
+<h2>2. Structure de base d’un programme<a class="headerlink" href="#structure-de-base-d-un-programme" title="Lien vers cette rubrique">#</a></h2>
+<p>Un programme Java est structuré autour de classes et de méthodes. La structure de base est assez simple et suit des conventions strictes, notamment concernant le nommage des fichiers et l’utilisation de la méthode <code class="docutils literal notranslate"><span class="pre">main()</span></code> comme point d’entrée.</p>
+<section id="exemple-de-structure-de-base">
+<h3>Exemple de Structure de Base<a class="headerlink" href="#exemple-de-structure-de-base" title="Lien vers cette rubrique">#</a></h3>
+<p>Voici un exemple minimal de la structure d’un programme Java :</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MonProgramme</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Code principal ici</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="elements-de-la-structure">
+<h3>Éléments de la Structure<a class="headerlink" href="#elements-de-la-structure" title="Lien vers cette rubrique">#</a></h3>
+<p>Ce programme simple contient les éléments essentiels de tout programme Java : une classe publique et une méthode <code class="docutils literal notranslate"><span class="pre">main()</span></code>.</p>
+<section id="classe-publique">
+<h4>2.1 Classe Publique<a class="headerlink" href="#classe-publique" title="Lien vers cette rubrique">#</a></h4>
+<div class="admonition-definition-classe-publique admonition">
+<p class="admonition-title">Définition : Classe Publique</p>
+<p>En Java, chaque fichier <code class="docutils literal notranslate"><span class="pre">.java</span></code> doit contenir <strong>au maximum une classe publique</strong>. Une classe publique est accessible depuis d’autres classes et constitue un modèle pour créer des objets en définissant leurs caractéristiques (attributs) et leurs comportements (méthodes).</p>
+</div>
+<ul class="simple">
+<li><p><strong>Nom de la Classe</strong> : Le nom de la classe doit commencer par une majuscule par convention (par exemple, <code class="docutils literal notranslate"><span class="pre">MonProgramme</span></code>).</p></li>
+<li><p><strong>Nommage du Fichier</strong> : Le fichier <code class="docutils literal notranslate"><span class="pre">.java</span></code> doit porter le même nom que la classe publique qu’il contient. Dans cet exemple, la classe publique est <code class="docutils literal notranslate"><span class="pre">MonProgramme</span></code>, donc le fichier devra être nommé <code class="docutils literal notranslate"><span class="pre">MonProgramme.java</span></code>. Toute divergence entre le nom du fichier et celui de la classe publique entraînera une erreur lors de la compilation.</p></li>
+</ul>
+</section>
+<section id="la-methode-main">
+<h4>2.2 La Méthode <code class="docutils literal notranslate"><span class="pre">main()</span></code><a class="headerlink" href="#la-methode-main" title="Lien vers cette rubrique">#</a></h4>
+<div class="admonition-definition-point-d-entree-du-programme admonition">
+<p class="admonition-title">Définition : Point d’Entrée du Programme</p>
+<p>La méthode <strong><code class="docutils literal notranslate"><span class="pre">main()</span></code></strong> est le point d’entrée de tout programme Java. C’est la première méthode qui est exécutée lorsqu’un programme Java démarre. Elle suit la signature suivante :</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<ul class="simple">
+<li><p><strong>Signature</strong> : La signature exacte de la méthode <code class="docutils literal notranslate"><span class="pre">main()</span></code> est obligatoire pour que la JVM identifie le point de départ du programme.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">public</span></code> : Cette méthode est accessible publiquement, permettant à la JVM de l’invoquer.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">static</span></code> : La méthode <code class="docutils literal notranslate"><span class="pre">main()</span></code> est statique, ce qui signifie qu’elle peut être appelée sans créer une instance de la classe.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">void</span></code> : La méthode <code class="docutils literal notranslate"><span class="pre">main()</span></code> ne renvoie aucune valeur.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">String[]</span> <span class="pre">args</span></code> : Elle prend un tableau de chaînes de caractères comme argument, permettant de passer des paramètres en ligne de commande au programme.</p></li>
+</ul>
+</li>
+<li><p><strong>Bloc de Code</strong> : C’est à l’intérieur de la méthode <code class="docutils literal notranslate"><span class="pre">main()</span></code> que le code principal de l’application est exécuté. Les instructions écrites ici seront exécutées lorsque le programme sera lancé.</p></li>
+</ul>
+</section>
+<section id="les-commentaires">
+<h4>2.3 Les Commentaires<a class="headerlink" href="#les-commentaires" title="Lien vers cette rubrique">#</a></h4>
+<p>Java permet l’utilisation de commentaires pour rendre le code plus compréhensible sans affecter son exécution. Il existe trois types de commentaires en Java :</p>
+<ul>
+<li><p><strong>Commentaire sur une ligne</strong> : Utilisez <code class="docutils literal notranslate"><span class="pre">//</span></code> pour ajouter un commentaire sur une seule ligne.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Ceci est un commentaire sur une ligne</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Commentaire sur plusieurs lignes</strong> : Utilisez <code class="docutils literal notranslate"><span class="pre">/*</span> <span class="pre">...</span> <span class="pre">*/</span></code> pour des commentaires sur plusieurs lignes.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm"> Ceci est un commentaire</span>
+<span class="cm"> sur plusieurs lignes</span>
+<span class="cm">*/</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Commentaire de documentation</strong> : Utilisez <code class="docutils literal notranslate"><span class="pre">/**</span> <span class="pre">...</span> <span class="pre">*/</span></code> pour générer automatiquement de la documentation.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * Ceci est un commentaire de documentation</span>
+<span class="cm"> */</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+</section>
+<section id="resume-de-la-structure-de-base">
+<h3>Résumé de la Structure de Base<a class="headerlink" href="#resume-de-la-structure-de-base" title="Lien vers cette rubrique">#</a></h3>
+<p>Un programme Java de base doit respecter les règles suivantes :</p>
+<ol class="arabic simple">
+<li><p><strong>Classe Publique</strong> : Un fichier <code class="docutils literal notranslate"><span class="pre">.java</span></code> contient une classe publique, dont le nom correspond à celui du fichier.</p></li>
+<li><p><strong>Méthode <code class="docutils literal notranslate"><span class="pre">main()</span></code></strong> : La méthode <code class="docutils literal notranslate"><span class="pre">main()</span></code> est le point d’entrée du programme et contient le code principal.</p></li>
+<li><p><strong>Commentaires</strong> : Ils sont utilisés pour documenter le code et faciliter la compréhension.</p></li>
+</ol>
+</section>
+</section>
+<section id="types-de-donnees">
+<h2>3. Types de données<a class="headerlink" href="#types-de-donnees" title="Lien vers cette rubrique">#</a></h2>
+<p>En Java, les données sont classées en deux grandes catégories : les types primitifs et les types référence. Les types primitifs stockent des valeurs simples, tandis que les types référence permettent de manipuler des objets complexes.</p>
+<section id="types-primitifs">
+<h3>Types Primitifs<a class="headerlink" href="#types-primitifs" title="Lien vers cette rubrique">#</a></h3>
+<p>Les types primitifs sont les types de base de Java. Ils sont prédéfinis par le langage et représentent des valeurs simples comme des entiers, des décimaux, des caractères, et des valeurs booléennes. Les types primitifs sont directement stockés en mémoire et sont souvent utilisés pour leurs performances optimales.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Taille</p></th>
+<th class="head"><p>Plage de valeurs</p></th>
+<th class="head"><p>Exemple</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>byte</p></td>
+<td><p>8 bits</p></td>
+<td><p>-128 à 127</p></td>
+<td><p>byte a = 100;</p></td>
+</tr>
+<tr class="row-odd"><td><p>short</p></td>
+<td><p>16 bits</p></td>
+<td><p>-32,768 à 32,767</p></td>
+<td><p>short b = 1000;</p></td>
+</tr>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>32 bits</p></td>
+<td><p>-2^31 à 2^31-1</p></td>
+<td><p>int c = 10000;</p></td>
+</tr>
+<tr class="row-odd"><td><p>long</p></td>
+<td><p>64 bits</p></td>
+<td><p>-2^63 à 2^63-1</p></td>
+<td><p>long d = 100000L;</p></td>
+</tr>
+<tr class="row-even"><td><p>float</p></td>
+<td><p>32 bits</p></td>
+<td><p>±3.4e−038 à ±3.4e+038</p></td>
+<td><p>float e = 3.14f;</p></td>
+</tr>
+<tr class="row-odd"><td><p>double</p></td>
+<td><p>64 bits</p></td>
+<td><p>±1.7e−308 à ±1.7e+308</p></td>
+<td><p>double f = 3.14;</p></td>
+</tr>
+<tr class="row-even"><td><p>boolean</p></td>
+<td><p>1 bit</p></td>
+<td><p>true/false</p></td>
+<td><p>boolean g = true;</p></td>
+</tr>
+<tr class="row-odd"><td><p>char</p></td>
+<td><p>16 bits</p></td>
+<td><p>caractère Unicode</p></td>
+<td><p>char h = “A”;</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition-remarque admonition">
+<p class="admonition-title">Remarque</p>
+<p>Les types primitifs ont des tailles et des plages de valeurs spécifiques, ce qui est important pour gérer la mémoire de manière efficace et éviter des erreurs de dépassement de capacité.</p>
+</div>
+<section id="explications-des-types-primitifs">
+<h4>Explications des Types Primitifs<a class="headerlink" href="#explications-des-types-primitifs" title="Lien vers cette rubrique">#</a></h4>
+<ul class="simple">
+<li><p><strong>byte</strong> : Utilisé pour représenter de petits entiers. Ce type est généralement utilisé dans les applications où la mémoire est une contrainte majeure, comme les systèmes embarqués.</p></li>
+<li><p><strong>short</strong> : Entier de taille moyenne, moins utilisé que <code class="docutils literal notranslate"><span class="pre">int</span></code> mais utile dans certaines applications spécifiques.</p></li>
+<li><p><strong>int</strong> : Type le plus courant pour les entiers. Utilisé pour la plupart des calculs numériques.</p></li>
+<li><p><strong>long</strong> : Utilisé lorsque la plage d’un <code class="docutils literal notranslate"><span class="pre">int</span></code> est insuffisante, notamment dans les calculs financiers.</p></li>
+<li><p><strong>float</strong> : Type pour les nombres décimaux, précis jusqu’à 6 à 7 chiffres après la virgule. Le suffixe <code class="docutils literal notranslate"><span class="pre">f</span></code> indique un <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p></li>
+<li><p><strong>double</strong> : Utilisé pour des nombres décimaux de plus grande précision (jusqu’à 15 chiffres après la virgule).</p></li>
+<li><p><strong>boolean</strong> : Type logique pour stocker les valeurs <code class="docutils literal notranslate"><span class="pre">true</span></code> ou <code class="docutils literal notranslate"><span class="pre">false</span></code>. Souvent utilisé dans les conditions.</p></li>
+<li><p><strong>char</strong> : Représente un seul caractère Unicode, ce qui permet de manipuler n’importe quel symbole (lettres, chiffres, symboles spéciaux).</p></li>
+</ul>
+</section>
+</section>
+<section id="types-reference">
+<h3>Types Référence<a class="headerlink" href="#types-reference" title="Lien vers cette rubrique">#</a></h3>
+<p>Les types référence permettent de manipuler des objets et des structures de données plus complexes que les types primitifs. Ils ne stockent pas directement la valeur, mais une référence vers l’emplacement mémoire où l’objet est stocké.</p>
+<p>Les types référence incluent :</p>
+<ul class="simple">
+<li><p><strong>String</strong> : Représente une chaîne de caractères. Les objets <code class="docutils literal notranslate"><span class="pre">String</span></code> sont immuables, ce qui signifie qu’une fois créés, leur contenu ne peut pas être modifié.</p></li>
+<li><p><strong>Arrays (Tableaux)</strong> : Structures de données permettant de stocker plusieurs éléments du même type.</p></li>
+<li><p><strong>Classes</strong> : Les classes sont des modèles pour créer des objets. Elles définissent les attributs et les comportements des objets.</p></li>
+<li><p><strong>Interfaces</strong> : Définissent un ensemble de méthodes que les classes peuvent implémenter. Elles permettent de réaliser une abstraction et de définir des comportements que différentes classes peuvent partager.</p></li>
+</ul>
+<div class="admonition-note-sur-les-types-reference admonition">
+<p class="admonition-title">Note sur les Types Référence</p>
+<p>Contrairement aux types primitifs, les types référence sont stockés en mémoire comme des objets. Leur manipulation est plus flexible mais peut nécessiter plus de mémoire.</p>
+</div>
+</section>
+<section id="exemple-d-utilisation">
+<h3>Exemple d’utilisation<a class="headerlink" href="#exemple-d-utilisation" title="Lien vers cette rubrique">#</a></h3>
+<p>Pour illustrer, voici un exemple de déclaration de différents types de données en Java :</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TypesDonnees</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kt">byte</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">short</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10000</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">long</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100000L</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">float</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14f</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">double</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">boolean</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">        </span><span class="kt">char</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;A&#39;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">chaine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Bonjour Java&quot;</span><span class="p">;</span>
+<span class="w">        </span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Byte : &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">a</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Short : &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Int : &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Long : &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">d</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Float : &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Double : &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">f</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Boolean : &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">g</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Char : &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">h</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;String : &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">chaine</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="variables-et-constantes">
+<h2>4. Variables et constantes<a class="headerlink" href="#variables-et-constantes" title="Lien vers cette rubrique">#</a></h2>
+<p>En Java, les variables et les constantes sont des éléments essentiels pour stocker et manipuler des données dans un programme. Les variables sont des conteneurs de valeurs qui peuvent être modifiées au cours de l’exécution, tandis que les constantes sont des valeurs fixes, définies une fois et non modifiables.</p>
+<section id="declaration-de-variables">
+<h3>Déclaration de Variables<a class="headerlink" href="#declaration-de-variables" title="Lien vers cette rubrique">#</a></h3>
+<p>Une variable est un espace mémoire réservé pour stocker une valeur d’un type spécifique. La déclaration d’une variable en Java suit généralement la syntaxe suivante :</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">type</span><span class="w"> </span><span class="n">nomVariable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">valeur</span><span class="p">;</span>
+</pre></div>
+</div>
+<section id="exemple-de-variables">
+<h4>Exemple de Variables<a class="headerlink" href="#exemple-de-variables" title="Lien vers cette rubrique">#</a></h4>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Déclaration et initialisation de variables</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="n">String</span><span class="w"> </span><span class="n">texte</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Dans cet exemple :</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">nombre</span> <span class="pre">=</span> <span class="pre">10;</span></code> : déclare une variable de type <code class="docutils literal notranslate"><span class="pre">int</span></code> (entier) nommée <code class="docutils literal notranslate"><span class="pre">nombre</span></code> et lui assigne la valeur <code class="docutils literal notranslate"><span class="pre">10</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">String</span> <span class="pre">texte</span> <span class="pre">=</span> <span class="pre">&quot;Hello&quot;;</span></code> : déclare une variable de type <code class="docutils literal notranslate"><span class="pre">String</span></code> (chaîne de caractères) nommée <code class="docutils literal notranslate"><span class="pre">texte</span></code> et lui assigne la valeur <code class="docutils literal notranslate"><span class="pre">&quot;Hello&quot;</span></code>.</p></li>
+</ul>
+</section>
+</section>
+<section id="regles-de-nommage-des-variables">
+<h3>Règles de Nommage des Variables<a class="headerlink" href="#regles-de-nommage-des-variables" title="Lien vers cette rubrique">#</a></h3>
+<p>Les noms des variables en Java doivent respecter certaines règles et conventions :</p>
+<ul class="simple">
+<li><p>Ils doivent commencer par une lettre (a-z ou A-Z), un dollar <code class="docutils literal notranslate"><span class="pre">$</span></code>, ou un tiret bas <code class="docutils literal notranslate"><span class="pre">_</span></code>. Les caractères suivants peuvent être des lettres, des chiffres (0-9), des dollars <code class="docutils literal notranslate"><span class="pre">$</span></code>, ou des tirets bas <code class="docutils literal notranslate"><span class="pre">_</span></code>.</p></li>
+<li><p>Ils ne peuvent pas contenir d’espaces ni de caractères spéciaux (à l’exception de <code class="docutils literal notranslate"><span class="pre">$</span></code> et <code class="docutils literal notranslate"><span class="pre">_</span></code>).</p></li>
+<li><p>Les noms des variables sont sensibles à la casse (<code class="docutils literal notranslate"><span class="pre">nombre</span></code> et <code class="docutils literal notranslate"><span class="pre">Nombre</span></code> sont différents).</p></li>
+</ul>
+<p><strong>Conventions</strong> :</p>
+<ul class="simple">
+<li><p>Utiliser le style camelCase pour les noms de variables (ex. <code class="docutils literal notranslate"><span class="pre">monNombre</span></code>, <code class="docutils literal notranslate"><span class="pre">texteUtilisateur</span></code>).</p></li>
+<li><p>Les noms de variables doivent être significatifs pour faciliter la compréhension du code.</p></li>
+</ul>
+</section>
+<section id="declaration-de-constantes">
+<h3>Déclaration de Constantes<a class="headerlink" href="#declaration-de-constantes" title="Lien vers cette rubrique">#</a></h3>
+<p>Une constante est une valeur fixe qui ne peut pas être modifiée une fois définie. En Java, on utilise le mot-clé <code class="docutils literal notranslate"><span class="pre">final</span></code> pour déclarer une constante. Par convention, les noms des constantes sont écrits en majuscules.</p>
+<div class="admonition-definition-constante admonition">
+<p class="admonition-title">Définition : Constante</p>
+<p>Une constante en Java est une variable qui, une fois initialisée, ne peut plus être modifiée. On la déclare avec le mot-clé <code class="docutils literal notranslate"><span class="pre">final</span></code> et un nom en majuscules pour indiquer qu’elle est immuable.</p>
+</div>
+<section id="exemple-de-constantes">
+<h4>Exemple de Constantes<a class="headerlink" href="#exemple-de-constantes" title="Lien vers cette rubrique">#</a></h4>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Déclaration d&#39;une constante</span>
+<span class="kd">final</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">PI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14159</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Dans cet exemple :</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">final</span> <span class="pre">double</span> <span class="pre">PI</span> <span class="pre">=</span> <span class="pre">3.14159;</span></code> : déclare une constante de type <code class="docutils literal notranslate"><span class="pre">double</span></code> nommée <code class="docutils literal notranslate"><span class="pre">PI</span></code> et lui assigne la valeur <code class="docutils literal notranslate"><span class="pre">3.14159</span></code>. Le mot-clé <code class="docutils literal notranslate"><span class="pre">final</span></code> empêche toute modification de <code class="docutils literal notranslate"><span class="pre">PI</span></code> après son initialisation.</p></li>
+</ul>
+</section>
+</section>
+<section id="exemple-complet-variables-et-constantes">
+<h3>Exemple Complet : Variables et Constantes<a class="headerlink" href="#exemple-complet-variables-et-constantes" title="Lien vers cette rubrique">#</a></h3>
+<p>Voici un exemple illustrant l’utilisation de variables et de constantes dans un programme Java :</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ExempleVariablesConstantes</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Variables</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">texte</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span><span class="p">;</span>
+<span class="w">        </span>
+<span class="w">        </span><span class="c1">// Constante</span>
+<span class="w">        </span><span class="kd">final</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">PI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14159</span><span class="p">;</span>
+<span class="w">        </span>
+<span class="w">        </span><span class="c1">// Affichage des valeurs</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Variable nombre : &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nombre</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Variable texte : &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">texte</span><span class="p">);</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Constante PI : &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">PI</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Dans ce programme :</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">nombre</span></code> et <code class="docutils literal notranslate"><span class="pre">texte</span></code> sont des variables dont les valeurs peuvent être modifiées.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PI</span></code> est une constante définie avec <code class="docutils literal notranslate"><span class="pre">final</span></code>, et sa valeur reste la même tout au long de l’exécution du programme.</p></li>
+</ul>
+</section>
+<section id="resume">
+<h3>Résumé<a class="headerlink" href="#resume" title="Lien vers cette rubrique">#</a></h3>
+<ul class="simple">
+<li><p><strong>Variables</strong> : Conteneurs de valeurs qui peuvent être modifiées. Utilisez un nom significatif en camelCase.</p></li>
+<li><p><strong>Constantes</strong> : Valeurs fixes définies avec <code class="docutils literal notranslate"><span class="pre">final</span></code> et nommées en majuscules. Elles ne peuvent pas être modifiées après l’initialisation.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="outil.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">précédent</p>
+        <p class="prev-next-title">Outil de Travail</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="exo1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">suivant</p>
+        <p class="prev-next-title">Exercices</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenu
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-et-caracteristiques">1. Définition et caractéristiques</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quest-ce-que-java">Qu’est-ce que Java ?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#les-principes-fondateurs-de-java">Les Principes Fondateurs de Java</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#write-once-run-anywhere-wora">1.1 Write Once, Run Anywhere (WORA)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#java-virtual-machine-jvm">1.2 Java Virtual Machine (JVM)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#compilation-et-bytecode">1.3 Compilation et Bytecode</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristiques-de-java">Caractéristiques de Java</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#langage-oriente-objet">1.4 Langage Orienté Objet</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#securite-et-robustesse">1.5 Sécurité et Robustesse</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#gestion-automatique-de-la-memoire">1.6 Gestion Automatique de la Mémoire</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#multithreading-et-concurrence">1.7 Multithreading et Concurrence</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-de-base-d-un-programme">2. Structure de base d’un programme</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-de-structure-de-base">Exemple de Structure de Base</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#elements-de-la-structure">Éléments de la Structure</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#classe-publique">2.1 Classe Publique</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#la-methode-main">2.2 La Méthode <code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#les-commentaires">2.3 Les Commentaires</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resume-de-la-structure-de-base">Résumé de la Structure de Base</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-de-donnees">3. Types de données</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-primitifs">Types Primitifs</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#explications-des-types-primitifs">Explications des Types Primitifs</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-reference">Types Référence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-d-utilisation">Exemple d’utilisation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-et-constantes">4. Variables et constantes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#declaration-de-variables">Déclaration de Variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-de-variables">Exemple de Variables</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regles-de-nommage-des-variables">Règles de Nommage des Variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#declaration-de-constantes">Déclaration de Constantes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-de-constantes">Exemple de Constantes</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-complet-variables-et-constantes">Exemple Complet : Variables et Constantes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resume">Résumé</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Par Professeur Iaousse Mbarek, École Supérieure de Technologie, Casablanca, Maroc.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
