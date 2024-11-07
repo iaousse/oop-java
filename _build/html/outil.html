@@ -1,0 +1,766 @@
+
+<!DOCTYPE html>
+
+
+<html lang="fr" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Outil de Travail &#8212; Introduction à la Programmation Orientée Objet avec Java</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="_static/documentation_options.js?v=72dce1d2"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/translations.js?v=041d0952"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'outil';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Rappel des bases de Java" href="introjava.html" />
+    <link rel="prev" title="Introduction à la Programmation Orientée Objet avec Java" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="fr"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Introduction à la Programmation Orientée Objet avec Java - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="Introduction à la Programmation Orientée Objet avec Java - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Recherche</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Introduction à la Programmation Orientée Objet avec Java
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Outil de Travail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introjava.html">Rappel des bases de Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exo1.html">Exercices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operations.html">Opérations et Comparaisons en Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="boucle.html">Structures de Contrôle, Tableaux, Méthodes et Gestion des Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oop.html">Programmation Orientée Objet (POO)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Dépôt source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Foutil.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Ouvrez un problème"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Téléchargez cette page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/outil.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Télécharger le fichier source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimer au format PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Mode plein écran"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Outil de Travail</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenu </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-a-jupyter-notebook">Introduction à Jupyter Notebook</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pourquoi-jupyter-notebook">Pourquoi Jupyter Notebook ?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-de-jupyter-notebook">Installation de Jupyter Notebook</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequis">Prérequis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#etape-1-installation-de-jupyter-notebook">Étape 1 : Installation de Jupyter Notebook</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#etape-2-lancer-jupyter-notebook">Étape 2 : Lancer Jupyter Notebook</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#etape-3-creer-un-nouveau-notebook">Étape 3 : Créer un Nouveau Notebook</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-du-noyau-java-ijava">Installation du noyau Java (IJava)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#etape-1-prerequis-pour-ijava">Étape 1 : Prérequis pour IJava</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#installer-java-java-11-ou-version-superieure">1. Installer Java (Java 11 ou version supérieure)</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">Linux</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#macos">macOS</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#etape-2-telecharger-et-installer-ijava">Étape 2 : Télécharger et Installer IJava</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Windows</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Linux</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">macOS</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#etape-3-verifier-l-installation-de-ijava">Étape 3 : Vérifier l’Installation de IJava</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#etape-4-tester-le-noyau-java-dans-jupyter-notebook">Étape 4 : Tester le noyau Java dans Jupyter Notebook</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="outil-de-travail">
+<h1>Outil de Travail<a class="headerlink" href="#outil-de-travail" title="Lien vers cette rubrique">#</a></h1>
+<section id="introduction-a-jupyter-notebook">
+<h2>Introduction à Jupyter Notebook<a class="headerlink" href="#introduction-a-jupyter-notebook" title="Lien vers cette rubrique">#</a></h2>
+<p><strong>Jupyter Notebook</strong> est une application open-source qui permet de créer et partager des documents contenant du code, du texte, des visualisations, et bien plus encore. C’est un outil très populaire en science des données, en apprentissage automatique et pour l’enseignement, car il permet de combiner du code et de la documentation de manière interactive.</p>
+<section id="pourquoi-jupyter-notebook">
+<h3>Pourquoi Jupyter Notebook ?<a class="headerlink" href="#pourquoi-jupyter-notebook" title="Lien vers cette rubrique">#</a></h3>
+<ul class="simple">
+<li><p><strong>Code Exécutable</strong> : Permet d’exécuter du code dans de nombreux langages de programmation, dont Python, R, et Java.</p></li>
+<li><p><strong>Interface Interactive</strong> : Facile à utiliser pour exécuter des fragments de code, tester des concepts, et obtenir des retours immédiats.</p></li>
+<li><p><strong>Visualisation des Données</strong> : Intègre facilement des visualisations, ce qui le rend parfait pour l’analyse de données.</p></li>
+<li><p><strong>Documentation et Narration</strong> : Avec le support du Markdown, il est possible d’écrire du texte, des formules mathématiques, et de créer des rapports lisibles et interactifs.</p></li>
+</ul>
+</section>
+</section>
+<section id="installation-de-jupyter-notebook">
+<h2>Installation de Jupyter Notebook<a class="headerlink" href="#installation-de-jupyter-notebook" title="Lien vers cette rubrique">#</a></h2>
+<section id="prerequis">
+<h3>Prérequis<a class="headerlink" href="#prerequis" title="Lien vers cette rubrique">#</a></h3>
+<ul class="simple">
+<li><p><strong>Python</strong> : Jupyter Notebook est basé sur Python, donc Python doit être installé sur votre machine. Téléchargez la version la plus récente de Python sur <a class="reference external" href="https://www.python.org/downloads/">python.org</a>.</p></li>
+</ul>
+<p>Pour vérifier si Python est installé, ouvrez le terminal (ou l’invite de commande) et tapez :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>--version
+</pre></div>
+</div>
+<p>ou</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>--version
+</pre></div>
+</div>
+</section>
+<section id="etape-1-installation-de-jupyter-notebook">
+<h3>Étape 1 : Installation de Jupyter Notebook<a class="headerlink" href="#etape-1-installation-de-jupyter-notebook" title="Lien vers cette rubrique">#</a></h3>
+<p>La méthode recommandée pour installer Jupyter Notebook est d’utiliser <code class="docutils literal notranslate"><span class="pre">pip</span></code>, le gestionnaire de paquets Python.</p>
+<ol class="arabic">
+<li><p>Ouvrez le terminal (ou l’invite de commande).</p></li>
+<li><p>Tapez la commande suivante pour installer Jupyter Notebook :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>notebook
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Cela va installer Jupyter Notebook ainsi que toutes les dépendances nécessaires.</p>
+</section>
+<section id="etape-2-lancer-jupyter-notebook">
+<h3>Étape 2 : Lancer Jupyter Notebook<a class="headerlink" href="#etape-2-lancer-jupyter-notebook" title="Lien vers cette rubrique">#</a></h3>
+<p>Pour lancer Jupyter Notebook, utilisez la commande suivante dans le terminal :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter<span class="w"> </span>notebook
+</pre></div>
+</div>
+<p>Cela ouvrira Jupyter Notebook dans votre navigateur par défaut et affichera une page où vous pouvez créer et organiser des notebooks.</p>
+</section>
+<section id="etape-3-creer-un-nouveau-notebook">
+<h3>Étape 3 : Créer un Nouveau Notebook<a class="headerlink" href="#etape-3-creer-un-nouveau-notebook" title="Lien vers cette rubrique">#</a></h3>
+<ol class="arabic simple">
+<li><p>Dans Jupyter Notebook, cliquez sur <strong>New</strong> (Nouveau) en haut à droite.</p></li>
+<li><p>Sélectionnez un noyau de programmation (par exemple, Python 3 pour exécuter du code Python).</p></li>
+</ol>
+<p>Vous avez maintenant un notebook ouvert et prêt pour exécuter du code !</p>
+</section>
+</section>
+<section id="installation-du-noyau-java-ijava">
+<h2>Installation du noyau Java (IJava)<a class="headerlink" href="#installation-du-noyau-java-ijava" title="Lien vers cette rubrique">#</a></h2>
+<p>Pour exécuter du code Java dans Jupyter Notebook, nous devons installer le noyau <strong>IJava</strong>, qui permet de faire fonctionner Java dans Jupyter Notebook.</p>
+<section id="etape-1-prerequis-pour-ijava">
+<h3>Étape 1 : Prérequis pour IJava<a class="headerlink" href="#etape-1-prerequis-pour-ijava" title="Lien vers cette rubrique">#</a></h3>
+<section id="installer-java-java-11-ou-version-superieure">
+<h4>1. Installer Java (Java 11 ou version supérieure)<a class="headerlink" href="#installer-java-java-11-ou-version-superieure" title="Lien vers cette rubrique">#</a></h4>
+<section id="windows">
+<h5>Windows<a class="headerlink" href="#windows" title="Lien vers cette rubrique">#</a></h5>
+<ol class="arabic">
+<li><p>Allez sur <a class="reference external" href="https://www.oracle.com/java/technologies/javase-downloads.html">oracle.com/java</a>.</p></li>
+<li><p>Téléchargez l’installateur pour Windows.</p></li>
+<li><p>Ouvrez l’installateur téléchargé et suivez les instructions pour installer Java.</p></li>
+<li><p>Une fois l’installation terminée, ouvrez l’invite de commande et vérifiez l’installation de Java avec la commande :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>java<span class="w"> </span>-version
+</pre></div>
+</div>
+<p>Vous devriez voir la version de Java installée si tout est correct.</p>
+</li>
+</ol>
+</section>
+<section id="linux">
+<h5>Linux<a class="headerlink" href="#linux" title="Lien vers cette rubrique">#</a></h5>
+<ol class="arabic">
+<li><p>Ouvrez le terminal.</p></li>
+<li><p>Mettez à jour le système et installez Java avec la commande suivante (pour Debian/Ubuntu) :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>openjdk-11-jdk
+</pre></div>
+</div>
+</li>
+<li><p>Vérifiez que Java est bien installé avec :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>java<span class="w"> </span>-version
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="macos">
+<h5>macOS<a class="headerlink" href="#macos" title="Lien vers cette rubrique">#</a></h5>
+<ol class="arabic">
+<li><p>Allez sur <a class="reference external" href="https://www.oracle.com/java/technologies/javase-downloads.html">oracle.com/java</a>.</p></li>
+<li><p>Téléchargez le fichier <code class="docutils literal notranslate"><span class="pre">.dmg</span></code> pour macOS et ouvrez-le pour lancer l’installation.</p></li>
+<li><p>Suivez les instructions de l’installateur pour installer Java.</p></li>
+<li><p>Une fois installé, ouvrez le terminal et vérifiez l’installation en tapant :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>java<span class="w"> </span>-version
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Si la version de Java s’affiche, l’installation a été réussie.</p>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="etape-2-telecharger-et-installer-ijava">
+<h3>Étape 2 : Télécharger et Installer IJava<a class="headerlink" href="#etape-2-telecharger-et-installer-ijava" title="Lien vers cette rubrique">#</a></h3>
+<p>Pour installer IJava, nous devons cloner le dépôt GitHub et utiliser <code class="docutils literal notranslate"><span class="pre">gradlew</span></code> pour installer le noyau.</p>
+<section id="id1">
+<h4>Windows<a class="headerlink" href="#id1" title="Lien vers cette rubrique">#</a></h4>
+<ol class="arabic">
+<li><p>Ouvrez l’invite de commande ou <strong>PowerShell</strong>.</p></li>
+<li><p><strong>Cloner le dépôt IJava</strong> :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/SpencerPark/IJava.git
+</pre></div>
+</div>
+<p>Cette commande va télécharger IJava dans un dossier nommé <code class="docutils literal notranslate"><span class="pre">IJava</span></code>.</p>
+</li>
+<li><p><strong>Naviguer dans le dossier IJava</strong> :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>IJava
+</pre></div>
+</div>
+</li>
+<li><p><strong>Construire et installer le noyau</strong> :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gradlew<span class="w"> </span>installKernel
+</pre></div>
+</div>
+<p>Une fois terminé, le noyau Java sera installé dans Jupyter.</p>
+</li>
+</ol>
+</section>
+<section id="id2">
+<h4>Linux<a class="headerlink" href="#id2" title="Lien vers cette rubrique">#</a></h4>
+<ol class="arabic">
+<li><p>Ouvrez le terminal.</p></li>
+<li><p><strong>Cloner le dépôt IJava</strong> :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/SpencerPark/IJava.git
+</pre></div>
+</div>
+</li>
+<li><p><strong>Naviguer dans le dossier IJava</strong> :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>IJava
+</pre></div>
+</div>
+</li>
+<li><p><strong>Construire et installer le noyau</strong> :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./gradlew<span class="w"> </span>installKernel
+</pre></div>
+</div>
+<p>Cette commande va installer le noyau IJava dans Jupyter Notebook.</p>
+</li>
+</ol>
+</section>
+<section id="id3">
+<h4>macOS<a class="headerlink" href="#id3" title="Lien vers cette rubrique">#</a></h4>
+<ol class="arabic">
+<li><p>Ouvrez le terminal.</p></li>
+<li><p><strong>Cloner le dépôt IJava</strong> :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/SpencerPark/IJava.git
+</pre></div>
+</div>
+</li>
+<li><p><strong>Naviguer dans le dossier IJava</strong> :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>IJava
+</pre></div>
+</div>
+</li>
+<li><p><strong>Construire et installer le noyau</strong> :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./gradlew<span class="w"> </span>installKernel
+</pre></div>
+</div>
+<p>Une fois terminé, vous verrez un message indiquant que l’installation est réussie.</p>
+</li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section id="etape-3-verifier-l-installation-de-ijava">
+<h3>Étape 3 : Vérifier l’Installation de IJava<a class="headerlink" href="#etape-3-verifier-l-installation-de-ijava" title="Lien vers cette rubrique">#</a></h3>
+<ol class="arabic">
+<li><p>Lancez Jupyter Notebook en tapant la commande suivante dans le terminal (ou l’invite de commande sous Windows) :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter<span class="w"> </span>notebook
+</pre></div>
+</div>
+</li>
+<li><p>Dans Jupyter Notebook, créez un nouveau notebook et, dans la liste des noyaux, vous devriez maintenant voir <strong>Java</strong> en plus de Python.</p></li>
+<li><p>Sélectionnez <strong>Java</strong> pour créer un notebook qui supporte le code Java.</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="etape-4-tester-le-noyau-java-dans-jupyter-notebook">
+<h3>Étape 4 : Tester le noyau Java dans Jupyter Notebook<a class="headerlink" href="#etape-4-tester-le-noyau-java-dans-jupyter-notebook" title="Lien vers cette rubrique">#</a></h3>
+<p>Dans votre nouveau notebook Java, vous pouvez maintenant exécuter des commandes Java. Par exemple, tapez le code suivant dans une cellule et exécutez-la :</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hello, Jupyter and Java!&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Si tout est installé correctement, vous verrez le texte <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">Jupyter</span> <span class="pre">and</span> <span class="pre">Java!</span></code> s’afficher sous la cellule.</p>
+<hr class="docutils" />
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">précédent</p>
+        <p class="prev-next-title">Introduction à la Programmation Orientée Objet avec Java</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="introjava.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">suivant</p>
+        <p class="prev-next-title">Rappel des bases de Java</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenu
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-a-jupyter-notebook">Introduction à Jupyter Notebook</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pourquoi-jupyter-notebook">Pourquoi Jupyter Notebook ?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-de-jupyter-notebook">Installation de Jupyter Notebook</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequis">Prérequis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#etape-1-installation-de-jupyter-notebook">Étape 1 : Installation de Jupyter Notebook</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#etape-2-lancer-jupyter-notebook">Étape 2 : Lancer Jupyter Notebook</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#etape-3-creer-un-nouveau-notebook">Étape 3 : Créer un Nouveau Notebook</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-du-noyau-java-ijava">Installation du noyau Java (IJava)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#etape-1-prerequis-pour-ijava">Étape 1 : Prérequis pour IJava</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#installer-java-java-11-ou-version-superieure">1. Installer Java (Java 11 ou version supérieure)</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">Linux</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#macos">macOS</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#etape-2-telecharger-et-installer-ijava">Étape 2 : Télécharger et Installer IJava</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Windows</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Linux</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">macOS</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#etape-3-verifier-l-installation-de-ijava">Étape 3 : Vérifier l’Installation de IJava</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#etape-4-tester-le-noyau-java-dans-jupyter-notebook">Étape 4 : Tester le noyau Java dans Jupyter Notebook</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Par Professeur Iaousse Mbarek, École Supérieure de Technologie, Casablanca, Maroc.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

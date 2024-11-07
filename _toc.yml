@@ -1,0 +1,13 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: outil
+- file: introjava
+- file: exo1
+- file: operations
+- file: boucle
+- file: oop
+- file: markdown-notebooks
