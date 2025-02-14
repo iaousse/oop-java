@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Programmation Orientée Objet (POO) &#8212; Introduction à la Programmation Orientée Objet avec Java</title>
+    <title>Programmation Orientée Objet (POO) en Java : Concepts et Pratiques &#8212; Introduction à la Programmation Orientée Objet avec Java</title>
   
   
   
@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=b4b7a797" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
@@ -176,7 +176,7 @@
 <li class="toctree-l1"><a class="reference internal" href="exo1.html">Exercices</a></li>
 <li class="toctree-l1"><a class="reference internal" href="operations.html">Opérations et Comparaisons en Java</a></li>
 <li class="toctree-l1"><a class="reference internal" href="boucle.html">Structures de Contrôle, Tableaux, Méthodes et Gestion des Exceptions</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Programmation Orientée Objet (POO)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Programmation Orientée Objet (POO) en Java : Concepts et Pratiques</a></li>
 <li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
 </ul>
 
@@ -355,7 +355,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Programmation Orientée Objet (POO)</h1>
+    <h1>Programmation Orientée Objet (POO) en Java : Concepts et Pratiques</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -365,13 +365,29 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-concepts-cles-de-la-programmation-orientee-objet">Les Concepts Clés de la Programmation Orientée Objet</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encapsulation">Encapsulation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heritage">Héritage</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polymorphisme">Polymorphisme</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#abstraction">Abstraction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#avantages-de-la-programmation-orientee-objet">Avantages de la Programmation Orientée Objet</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemples-concrets-d-applications-en-poo">Exemples Concrets d’Applications en POO</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts-fondamentaux-de-la-poo">Concepts Fondamentaux de la POO</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#encapsulation">Encapsulation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#heritage">Héritage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#polymorphisme">Polymorphisme</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#abstraction">Abstraction</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts-avances-classes-et-objets">Concepts Avancés : Classes et Objets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constructeurs">Constructeurs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utilisation-du-mot-cle-this">Utilisation du mot-clé <code class="docutils literal notranslate"><span class="pre">this</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relations-entre-classes">Relations entre Classes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#association">Association</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#composition">Composition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agregation">Agrégation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes-abstraites-et-interfaces">Classes Abstraites et Interfaces</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes-abstraites">Classes Abstraites</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interfaces">Interfaces</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -383,117 +399,574 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="programmation-orientee-objet-poo">
-<h1>Programmation Orientée Objet (POO)<a class="headerlink" href="#programmation-orientee-objet-poo" title="Lien vers cette rubrique">#</a></h1>
-<p>La Programmation Orientée Objet (POO) est un paradigme de programmation qui organise le code autour d’objets, qui représentent des entités du monde réel ou des concepts abstraits. En POO, les objets sont définis par des <strong>classes</strong> et peuvent interagir entre eux par l’intermédiaire de <strong>méthodes</strong> et d”<strong>attributs</strong>. Ce modèle est particulièrement efficace pour structurer et réutiliser du code dans des applications complexes.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="programmation-orientee-objet-poo-en-java-concepts-et-pratiques">
+<h1>Programmation Orientée Objet (POO) en Java : Concepts et Pratiques<a class="headerlink" href="#programmation-orientee-objet-poo-en-java-concepts-et-pratiques" title="Lien vers cette rubrique">#</a></h1>
+<p>La Programmation Orientée Objet (POO) en Java est une méthode de développement qui structure le code autour d’objets et de leurs interactions. Ce modèle repose sur des notions essentielles comme les <strong>classes</strong>, les <strong>objets</strong>, les <strong>méthodes</strong> et les <strong>attributs</strong>. La POO est largement utilisée pour structurer et réutiliser du code dans des applications complexes et modulaires, favorisant la maintenabilité et l’extensibilité des projets.</p>
 <div class="admonition-definition-objets-et-classes admonition">
 <p class="admonition-title">Définition : Objets et Classes</p>
 <ul class="simple">
-<li><p><strong>Objet</strong> : Un objet est une instance d’une classe. Il possède des caractéristiques (attributs) et des comportements (méthodes).</p></li>
+<li><p><strong>Objet</strong> : Un objet est une instance d’une classe, représentant une entité concrète ou abstraite. Il possède des caractéristiques (attributs) et des comportements (méthodes).</p></li>
 <li><p><strong>Classe</strong> : Une classe est un modèle ou un plan de conception qui définit les attributs et les méthodes que ses objets auront.</p></li>
 </ul>
 </div>
-<section id="les-concepts-cles-de-la-programmation-orientee-objet">
-<h2>Les Concepts Clés de la Programmation Orientée Objet<a class="headerlink" href="#les-concepts-cles-de-la-programmation-orientee-objet" title="Lien vers cette rubrique">#</a></h2>
-<p>La POO repose sur quatre concepts fondamentaux : l”<strong>encapsulation</strong>, l”<strong>héritage</strong>, le <strong>polymorphisme</strong>, et l”<strong>abstraction</strong>. Ces concepts permettent de concevoir des systèmes modulaires, maintenables et extensibles.</p>
-</section>
+<section id="concepts-fondamentaux-de-la-poo">
+<h2>Concepts Fondamentaux de la POO<a class="headerlink" href="#concepts-fondamentaux-de-la-poo" title="Lien vers cette rubrique">#</a></h2>
+<p>La POO repose sur quatre principes : l”<strong>encapsulation</strong>, l”<strong>héritage</strong>, le <strong>polymorphisme</strong>, et l”<strong>abstraction</strong>. Ces principes sont fondamentaux pour structurer les systèmes de manière modulaire et garantir une organisation claire et flexible du code.</p>
 <hr class="docutils" />
 <section id="encapsulation">
-<h2>Encapsulation<a class="headerlink" href="#encapsulation" title="Lien vers cette rubrique">#</a></h2>
-<p>L’encapsulation consiste à regrouper les attributs (données) et les méthodes (fonctions) d’un objet dans une même entité (la classe) et à restreindre l’accès direct à certaines parties de cette entité.</p>
+<h3>Encapsulation<a class="headerlink" href="#encapsulation" title="Lien vers cette rubrique">#</a></h3>
+<p>L’encapsulation consiste à regrouper les données (attributs) et les fonctions (méthodes) qui manipulent ces données dans une même entité (la classe). Elle permet également de restreindre l’accès direct aux données, ce qui favorise la sécurité en protégeant les attributs des modifications extérieures non contrôlées.</p>
 <div class="admonition-definition-encapsulation admonition">
 <p class="admonition-title">Définition : Encapsulation</p>
-<p>L’encapsulation permet de contrôler l’accès aux attributs et méthodes d’un objet en les rendant privés (<code class="docutils literal notranslate"><span class="pre">private</span></code>). L’accès est alors limité et se fait par des méthodes publiques (getters et setters) qui permettent de consulter ou de modifier ces attributs de manière sécurisée.</p>
+<p>L’encapsulation consiste à rendre les attributs d’un objet privés (<code class="docutils literal notranslate"><span class="pre">private</span></code>) et à autoriser leur manipulation uniquement via des méthodes spécifiques, généralement des <strong>getters</strong> (méthodes de lecture) et des <strong>setters</strong> (méthodes de modification). Cela permet de contrôler les accès et de garantir une manipulation sécurisée.</p>
 </div>
-<div class="admonition-exemple admonition">
-<p class="admonition-title">Exemple</p>
-<p>Imaginons une classe <strong>CompteBancaire</strong> où l’attribut <code class="docutils literal notranslate"><span class="pre">solde</span></code> est encapsulé. Au lieu d’accéder directement à <code class="docutils literal notranslate"><span class="pre">solde</span></code>, l’utilisateur doit utiliser des méthodes telles que <code class="docutils literal notranslate"><span class="pre">getSolde()</span></code> pour consulter le solde et <code class="docutils literal notranslate"><span class="pre">deposer()</span></code> ou <code class="docutils literal notranslate"><span class="pre">retirer()</span></code> pour modifier le solde. Cela garantit que le solde ne peut pas être directement modifié de manière incontrôlée.</p>
+<div class="admonition-exemple-dencapsulation admonition">
+<p class="admonition-title">Exemple d’Encapsulation</p>
+<p>Considérons une classe <strong>CompteBancaire</strong> avec un attribut <code class="docutils literal notranslate"><span class="pre">solde</span></code> encapsulé. Plutôt que d’accéder directement à <code class="docutils literal notranslate"><span class="pre">solde</span></code>, l’utilisateur doit utiliser les méthodes <code class="docutils literal notranslate"><span class="pre">getSolde()</span></code> pour consulter le solde et <code class="docutils literal notranslate"><span class="pre">deposer()</span></code> ou <code class="docutils literal notranslate"><span class="pre">retirer()</span></code> pour le modifier. Cela garantit que le solde ne peut pas être modifié de manière inappropriée.</p>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">CompteBancaire</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">solde</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Getter pour lire le solde</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">getSolde</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">solde</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Méthode pour déposer de l&#39;argent</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">deposer</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">montant</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">montant</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">solde</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">montant</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Méthode pour retirer de l&#39;argent</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">retirer</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">montant</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">montant</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">montant</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">solde</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">solde</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">montant</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition-exemple-dencapsulation admonition">
+<p class="admonition-title">Exemple d’Encapsulation</p>
+<p>Considérons une classe <strong>Etudiant</strong> qui encapsule des attributs privés <code class="docutils literal notranslate"><span class="pre">nom</span></code> et <code class="docutils literal notranslate"><span class="pre">age</span></code>. Ces attributs ne sont accessibles que par des méthodes publiques appelées getters et setters. Cela garantit un contrôle sur l’accès et la modification des données, notamment en validant que l’âge est positif avant de l’attribuer.</p>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Etudiant</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nom</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c1">// Getters</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getNom</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">nom</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getAge</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c1">// Setters</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setNom</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nom</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nom</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setAge</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">age</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="na">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
 </div>
 <div class="admonition-remarque admonition">
 <p class="admonition-title">Remarque</p>
-<p>L’encapsulation renforce la sécurité et la robustesse d’une application en empêchant l’accès non autorisé et en contrôlant les modifications des attributs sensibles.</p>
+<p>L’encapsulation améliore la sécurité et la robustesse d’une application en empêchant les modifications directes des attributs. Les méthodes contrôlent comment ces attributs sont manipulés, ce qui limite les erreurs potentielles.</p>
 </div>
 </section>
 <hr class="docutils" />
 <section id="heritage">
-<h2>Héritage<a class="headerlink" href="#heritage" title="Lien vers cette rubrique">#</a></h2>
-<p>L’héritage permet de créer une nouvelle classe basée sur une classe existante. La nouvelle classe, appelée <strong>classe dérivée</strong> ou <strong>classe enfant</strong>, hérite des attributs et méthodes de la <strong>classe parente</strong>, tout en pouvant ajouter ses propres caractéristiques.</p>
+<h3>Héritage<a class="headerlink" href="#heritage" title="Lien vers cette rubrique">#</a></h3>
+<p>L’héritage est un mécanisme permettant de créer une nouvelle classe (appelée classe dérivée ou enfant) à partir d’une classe existante (classe parente). La classe dérivée hérite des attributs et des méthodes de la classe parente, mais peut également définir des caractéristiques supplémentaires ou spécifiques.</p>
 <div class="admonition-definition-heritage admonition">
 <p class="admonition-title">Définition : Héritage</p>
-<p>L’héritage est un mécanisme qui permet à une classe d’hériter des attributs et des méthodes d’une autre classe. Il favorise la réutilisation du code et facilite l’extension des fonctionnalités d’une classe existante sans la modifier directement.</p>
+<p>L’héritage est un moyen de réutiliser le code en permettant à une classe d’hériter des attributs et des méthodes d’une autre classe. Ce mécanisme favorise la hiérarchisation et l’organisation logique du code.</p>
 </div>
-<div class="admonition-exemple admonition">
-<p class="admonition-title">Exemple</p>
-<p>Imaginons une classe <strong>Animal</strong> avec des attributs généraux tels que <code class="docutils literal notranslate"><span class="pre">nom</span></code> et <code class="docutils literal notranslate"><span class="pre">age</span></code>. En créant une classe <strong>Chien</strong> qui hérite de <strong>Animal</strong>, la classe <strong>Chien</strong> obtient automatiquement les attributs et méthodes de <strong>Animal</strong>, et peut ajouter des caractéristiques spécifiques comme <code class="docutils literal notranslate"><span class="pre">aboyer()</span></code>.</p>
+<div class="admonition-exemple-dheritage admonition">
+<p class="admonition-title">Exemple d’Héritage</p>
+<p>Imaginons une classe <strong>Animal</strong> avec des attributs <code class="docutils literal notranslate"><span class="pre">nom</span></code> et <code class="docutils literal notranslate"><span class="pre">age</span></code>. En créant une classe <strong>Chien</strong> qui hérite de <strong>Animal</strong>, la classe <strong>Chien</strong> obtient automatiquement les attributs et méthodes de <strong>Animal</strong> et peut ajouter des fonctionnalités spécifiques, telles que <code class="docutils literal notranslate"><span class="pre">aboyer()</span></code>.</p>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nom</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">manger</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">nom</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; est en train de manger.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Chien</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">aboyer</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">nom</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; aboie.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition-exemple-dheritage admonition">
+<p class="admonition-title">Exemple d’Héritage</p>
+<p>Prenons l’exemple d’une classe <strong>Animal</strong> qui possède une méthode <code class="docutils literal notranslate"><span class="pre">manger()</span></code>. Une classe <strong>Chat</strong> hérite d”<strong>Animal</strong> et utilise cette méthode, tout en ajoutant une méthode <code class="docutils literal notranslate"><span class="pre">miauler()</span></code> spécifique aux chats. Grâce à l’héritage, <strong>Chat</strong> peut réutiliser la fonctionnalité <code class="docutils literal notranslate"><span class="pre">manger()</span></code> sans la redéfinir.</p>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nom</span><span class="p">;</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">manger</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">nom</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; mange.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Chat</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Chat</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nom</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nom</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">miauler</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">nom</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; miaule!&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Utilisation</span>
+<span class="n">Chat</span><span class="w"> </span><span class="n">monChat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Chat</span><span class="p">(</span><span class="s">&quot;Felix&quot;</span><span class="p">);</span>
+<span class="n">monChat</span><span class="p">.</span><span class="na">manger</span><span class="p">();</span><span class="w">    </span><span class="c1">// Méthode héritée</span>
+<span class="n">monChat</span><span class="p">.</span><span class="na">miauler</span><span class="p">();</span><span class="w">   </span><span class="c1">// Méthode spécifique</span>
+</pre></div>
 </div>
 <div class="admonition-remarque admonition">
 <p class="admonition-title">Remarque</p>
-<p>L’héritage permet de structurer les applications en définissant des hiérarchies de classes, mais il doit être utilisé judicieusement pour éviter une hiérarchie trop complexe qui peut devenir difficile à maintenir.</p>
+<p>L’héritage permet de structurer le code en définissant des hiérarchies de classes. Toutefois, une hiérarchie trop complexe peut devenir difficile à maintenir, donc l’héritage doit être utilisé judicieusement.</p>
 </div>
 </section>
 <hr class="docutils" />
 <section id="polymorphisme">
-<h2>Polymorphisme<a class="headerlink" href="#polymorphisme" title="Lien vers cette rubrique">#</a></h2>
-<p>Le polymorphisme permet à des objets de classes différentes d’être traités de manière interchangeable, en fonction de leur relation d’héritage. Il permet de redéfinir des méthodes dans des classes dérivées et de sélectionner la méthode appropriée à exécuter selon le type de l’objet.</p>
+<h3>Polymorphisme<a class="headerlink" href="#polymorphisme" title="Lien vers cette rubrique">#</a></h3>
+<p>Le polymorphisme permet de manipuler des objets de différentes classes de manière interchangeable grâce à une relation d’héritage. Ce concept permet de redéfinir des méthodes dans les classes dérivées, en adaptant le comportement aux besoins spécifiques de chaque classe.</p>
 <div class="admonition-definition-polymorphisme admonition">
 <p class="admonition-title">Définition : Polymorphisme</p>
-<p>Le polymorphisme signifie « plusieurs formes ». Il permet à une même méthode d’avoir des comportements différents selon l’objet qui l’implémente, ou à une variable de représenter des objets de classes liées par héritage.</p>
+<p>Le polymorphisme signifie « plusieurs formes ». Il permet de traiter différents types d’objets de manière uniforme tout en permettant à chaque objet de définir son propre comportement.</p>
 </div>
-<div class="admonition-exemple admonition">
-<p class="admonition-title">Exemple</p>
-<p>Dans une hiérarchie de classes avec une classe parente <strong>Animal</strong> et des classes enfants <strong>Chien</strong> et <strong>Chat</strong>, chaque classe peut redéfinir une méthode commune <code class="docutils literal notranslate"><span class="pre">faireDuBruit()</span></code>. Lorsqu’on appelle <code class="docutils literal notranslate"><span class="pre">faireDuBruit()</span></code> sur une référence d”<strong>Animal</strong>, le bruit spécifique à l’animal (aboiement pour le chien, miaulement pour le chat) est émis en fonction de la classe réelle de l’objet.</p>
+<div class="admonition-exemple-de-polymorphisme admonition">
+<p class="admonition-title">Exemple de Polymorphisme</p>
+<p>Dans une hiérarchie de classes avec une classe parente <strong>Animal</strong> et des classes enfants <strong>Chien</strong> et <strong>Chat</strong>, une méthode commune <code class="docutils literal notranslate"><span class="pre">faireDuBruit()</span></code> peut être redéfinie dans chaque classe pour produire le son approprié.</p>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">faireDuBruit</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;L&#39;animal fait un bruit.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Chien</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">faireDuBruit</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Le chien aboie.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Chat</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">faireDuBruit</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Le chat miaule.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition-exemple-de-polymorphisme admonition">
+<p class="admonition-title">Exemple de Polymorphisme</p>
+<p>Imaginons une classe <strong>Animal</strong> avec une méthode <code class="docutils literal notranslate"><span class="pre">faireBruit()</span></code>. Les classes dérivées <strong>Chat</strong> et <strong>Chien</strong> redéfinissent cette méthode pour produire des bruits différents. En utilisant le polymorphisme, on peut traiter les deux objets (chat et chien) comme des animaux, mais obtenir des résultats spécifiques selon le type de l’animal.</p>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">faireBruit</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;L&#39;animal fait un bruit&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Chat</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">faireBruit</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Miaou!&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Chien</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">faireBruit</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Wouf!&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Utilisation</span>
+<span class="n">Animal</span><span class="w"> </span><span class="n">animal1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Chat</span><span class="p">();</span>
+<span class="n">Animal</span><span class="w"> </span><span class="n">animal2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Chien</span><span class="p">();</span>
+<span class="n">animal1</span><span class="p">.</span><span class="na">faireBruit</span><span class="p">();</span><span class="w">  </span><span class="c1">// Affiche &quot;Miaou!&quot;</span>
+<span class="n">animal2</span><span class="p">.</span><span class="na">faireBruit</span><span class="p">();</span><span class="w">  </span><span class="c1">// Affiche &quot;Wouf!&quot;</span>
+</pre></div>
 </div>
 <div class="admonition-remarque admonition">
 <p class="admonition-title">Remarque</p>
-<p>Le polymorphisme simplifie le code en permettant de traiter différents objets de manière uniforme, tout en laissant chaque objet définir son propre comportement.</p>
+<p>Le polymorphisme simplifie le code en permettant d’écrire des méthodes génériques qui s’adaptent automatiquement au type spécifique de l’objet manipulé. C’est un concept clé pour l’extensibilité.</p>
 </div>
 </section>
 <hr class="docutils" />
 <section id="abstraction">
-<h2>Abstraction<a class="headerlink" href="#abstraction" title="Lien vers cette rubrique">#</a></h2>
-<p>L’abstraction consiste à ne montrer que les détails essentiels d’une entité et à masquer les détails de son implémentation. Cela permet de concevoir des interfaces ou des classes abstraites pour définir des méthodes sans en spécifier le contenu exact, qui sera implémenté dans les classes dérivées.</p>
+<h3>Abstraction<a class="headerlink" href="#abstraction" title="Lien vers cette rubrique">#</a></h3>
+<p>L’abstraction consiste à ne montrer que les aspects essentiels d’une entité tout en masquant les détails d’implémentation. Cela permet de concevoir des classes abstraites ou des interfaces pour définir les caractéristiques communes d’un ensemble d’objets sans imposer une implémentation spécifique.</p>
 <div class="admonition-definition-abstraction admonition">
 <p class="admonition-title">Définition : Abstraction</p>
-<p>L’abstraction est le processus de simplification d’un système en se concentrant sur ses aspects essentiels. En POO, elle est souvent réalisée par le biais des classes abstraites ou des interfaces, qui définissent un ensemble de méthodes sans implémentation.</p>
+<p>L’abstraction est le processus de simplification en se concentrant sur les caractéristiques essentielles d’un objet, en ignorant les détails secondaires. En POO, elle se réalise souvent avec des interfaces ou des classes abstraites.</p>
 </div>
-<div class="admonition-exemple admonition">
-<p class="admonition-title">Exemple</p>
-<p>Imaginons une interface <strong>Forme</strong> avec une méthode <code class="docutils literal notranslate"><span class="pre">calculerSurface()</span></code>. Les classes <strong>Cercle</strong> et <strong>Rectangle</strong> implémentent cette interface et fournissent leur propre version de <code class="docutils literal notranslate"><span class="pre">calculerSurface()</span></code>. Cela permet d’utiliser l’interface <strong>Forme</strong> pour manipuler des formes géométriques sans se soucier du type de forme exact.</p>
+<div class="admonition-exemple-dabstraction admonition">
+<p class="admonition-title">Exemple d’Abstraction</p>
+<p>Une interface <strong>Forme</strong> avec une méthode <code class="docutils literal notranslate"><span class="pre">calculerSurface()</span></code> peut être implémentée par des classes <strong>Cercle</strong> et <strong>Rectangle</strong>, chacune fournissant une implémentation spécifique de <code class="docutils literal notranslate"><span class="pre">calculerSurface()</span></code>.</p>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Forme</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">calculerSurface</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Cercle</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Forme</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">rayon</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Cercle</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">rayon</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">rayon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rayon</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">calculerSurface</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">PI</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">rayon</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">rayon</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Rectangle</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Forme</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">longueur</span><span class="p">,</span><span class="w"> </span><span class="n">largeur</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Rectangle</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">longueur</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">largeur</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">longueur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">longueur</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">largeur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">largeur</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">calculerSurface</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">longueur</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">largeur</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition-exemple-dabstraction admonition">
+<p class="admonition-title">Exemple d’Abstraction</p>
+<p>Dans cet exemple, <strong>Forme</strong> est une classe abstraite avec une méthode <code class="docutils literal notranslate"><span class="pre">calculerAire()</span></code>. La classe concrète <strong>Carre</strong> étend <strong>Forme</strong> et fournit sa propre implémentation de <code class="docutils literal notranslate"><span class="pre">calculerAire()</span></code>. Cette approche permet d’exiger la présence de cette méthode dans toutes les formes sans spécifier son fonctionnement exact dans la classe mère.</p>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Forme</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">calculerAire</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Carre</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Forme</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">cote</span><span class="p">;</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Carre</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">cote</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">cote</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cote</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">calculerAire</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">cote</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">cote</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Utilisation</span>
+<span class="n">Carre</span><span class="w"> </span><span class="n">monCarre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Carre</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Aire: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">monCarre</span><span class="p">.</span><span class="na">calculerAire</span><span class="p">());</span>
+</pre></div>
 </div>
 <div class="admonition-remarque admonition">
 <p class="admonition-title">Remarque</p>
-<p>L’abstraction favorise la flexibilité et la modularité en permettant aux classes de se concentrer sur les fonctionnalités essentielles tout en laissant les détails d’implémentation aux classes spécifiques.</p>
+<p>L’abstraction permet de définir des comportements attendus sans imposer de détails d’implémentation, rendant le code plus flexible et adaptable.</p>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="concepts-avances-classes-et-objets">
+<h2>Concepts Avancés : Classes et Objets<a class="headerlink" href="#concepts-avances-classes-et-objets" title="Lien vers cette rubrique">#</a></h2>
+<section id="constructeurs">
+<h3>Constructeurs<a class="headerlink" href="#constructeurs" title="Lien vers cette rubrique">#</a></h3>
+<p>Les constructeurs sont des méthodes spéciales permettant d’initialiser les objets lors de leur création. Ils portent le même nom que la classe et n’ont pas de type de retour.</p>
+<div class="admonition-types-de-constructeurs admonition">
+<p class="admonition-title">Types de Constructeurs</p>
+<ul class="simple">
+<li><p><strong>Constructeur par défaut</strong> : Sans paramètres, initialise les attributs avec des valeurs par défaut.</p></li>
+<li><p><strong>Constructeur paramétré</strong> : Avec paramètres, permet d’initialiser les attributs avec des valeurs spécifiques.</p></li>
+<li><p><strong>Constructeur surchargé</strong> : Plusieurs versions du constructeur avec différents paramètres.</p></li>
+</ul>
+</div>
+<div class="admonition-exemple-de-constructeurs admonition">
+<p class="admonition-title">Exemple de Constructeurs</p>
+<p>Considérons une classe <strong>Personne</strong> avec un constructeur par défaut, un constructeur paramétré, et un constructeur surchargé. Le constructeur surchargé utilise <code class="docutils literal notranslate"><span class="pre">this</span></code> pour appeler un autre constructeur.</p>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Personne</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nom</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Constructeur par défaut</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Personne</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Inconnu&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Constructeur paramétré</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Personne</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nom</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">age</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Constructeur surchargé avec un seul paramètre</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Personne</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nom</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">(</span><span class="n">nom</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// Appel au constructeur paramétré</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition-exemple-de-constructeurs admonition">
+<p class="admonition-title">Exemple de Constructeurs</p>
+<p>La classe <strong>Livre</strong> présente trois types de constructeurs : un constructeur par défaut qui assigne des valeurs prédéfinies, un constructeur paramétré pour fournir des valeurs spécifiques et un constructeur surchargé pour gérer des cas intermédiaires, comme un livre sans auteur spécifié.</p>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Livre</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">titre</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">auteur</span><span class="p">;</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c1">// Constructeur par défaut</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Livre</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">titre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Sans titre&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">auteur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Inconnu&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c1">// Constructeur paramétré</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Livre</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">titre</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">auteur</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">titre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">titre</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">auteur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">auteur</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c1">// Constructeur avec un seul paramètre</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Livre</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">titre</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">(</span><span class="n">titre</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Inconnu&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// Appel du constructeur paramétré</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
 </div>
 </section>
 <hr class="docutils" />
-<section id="avantages-de-la-programmation-orientee-objet">
-<h2>Avantages de la Programmation Orientée Objet<a class="headerlink" href="#avantages-de-la-programmation-orientee-objet" title="Lien vers cette rubrique">#</a></h2>
-<p>La POO offre plusieurs avantages, en particulier pour les projets de grande envergure où la modularité, la réutilisabilité et la maintenance du code sont essentielles.</p>
-<div class="admonition-avantages admonition">
-<p class="admonition-title">Avantages</p>
-<ol class="arabic simple">
-<li><p><strong>Modularité</strong> : Les objets permettent de diviser le programme en parties indépendantes et modulaires.</p></li>
-<li><p><strong>Réutilisabilité</strong> : L’héritage et le polymorphisme facilitent la réutilisation du code existant.</p></li>
-<li><p><strong>Maintenance</strong> : L’encapsulation et l’organisation en objets rendent le code plus facile à maintenir et à déboguer.</p></li>
-<li><p><strong>Extensibilité</strong> : La POO permet d’ajouter de nouvelles fonctionnalités avec un minimum d’impact sur le code existant.</p></li>
-</ol>
+<section id="utilisation-du-mot-cle-this">
+<h3>Utilisation du mot-clé <code class="docutils literal notranslate"><span class="pre">this</span></code><a class="headerlink" href="#utilisation-du-mot-cle-this" title="Lien vers cette rubrique">#</a></h3>
+<p>Le mot-clé <code class="docutils literal notranslate"><span class="pre">this</span></code> fait référence à l’instance courante de la classe. Il permet de différencier les attributs des paramètres, d’appeler un autre constructeur, et de passer l’instance courante en paramètre.</p>
+<p>```{admonition} Exemple avec <code class="docutils literal notranslate"><span class="pre">this</span></code>
+Dans la méthode <code class="docutils literal notranslate"><span class="pre">setValeur</span></code>, <code class="docutils literal notranslate"><span class="pre">this</span></code> est utilisé pour distinguer l’attribut <code class="docutils literal notranslate"><span class="pre">valeur</span></code> du paramètre <code class="docutils literal notranslate"><span class="pre">valeur</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+```java
+public class Exemple {
+    private int valeur;
+
+    public void setValeur(int valeur) {
+        this.valeur = valeur; // &#39;this.valeur&#39; fait référence à l&#39;attribut
+    }
+
+    public Exemple getThis() {
+        return this; // Retourne l&#39;instance courante
+    }
+}
+</pre></div>
 </div>
 </section>
-<section id="exemples-concrets-d-applications-en-poo">
-<h2>Exemples Concrets d’Applications en POO<a class="headerlink" href="#exemples-concrets-d-applications-en-poo" title="Lien vers cette rubrique">#</a></h2>
-<div class="admonition-exemple-d-application-systeme-de-gestion-bancaire admonition">
-<p class="admonition-title">Exemple d’Application : Système de Gestion Bancaire</p>
-<p>Dans un système bancaire, les classes pourraient inclure <strong>CompteBancaire</strong>, <strong>Client</strong>, et <strong>Transaction</strong>. Chaque classe encapsule ses attributs et ses méthodes propres, comme <code class="docutils literal notranslate"><span class="pre">deposer()</span></code> et <code class="docutils literal notranslate"><span class="pre">retirer()</span></code> pour <strong>CompteBancaire</strong>. Les clients ayant différents types de comptes peuvent être créés en héritant de la classe <strong>CompteBancaire</strong> (par exemple, <strong>CompteEpargne</strong> ou <strong>CompteCourant</strong>).</p>
+</section>
+<hr class="docutils" />
+<section id="relations-entre-classes">
+<h2>Relations entre Classes<a class="headerlink" href="#relations-entre-classes" title="Lien vers cette rubrique">#</a></h2>
+<section id="association">
+<h3>Association<a class="headerlink" href="#association" title="Lien vers cette rubrique">#</a></h3>
+<p>L’association est une relation simple entre deux classes, où une classe utilise une autre.</p>
+<div class="admonition-exemple-d-association admonition">
+<p class="admonition-title">Exemple d’Association</p>
+<p>Dans une relation entre une classe <strong>Voiture</strong> et une classe <strong>Conducteur</strong>, chaque <strong>Voiture</strong> possède un <strong>Conducteur</strong>.</p>
 </div>
-<div class="admonition-exemple-d-application-application-de-gestion-de-bibliotheque admonition">
-<p class="admonition-title">Exemple d’Application : Application de Gestion de Bibliothèque</p>
-<p>Dans une application de bibliothèque, les classes pourraient inclure <strong>Livre</strong>, <strong>Membre</strong>, et <strong>Emprunt</strong>. <strong>Livre</strong> pourrait encapsuler des attributs comme <code class="docutils literal notranslate"><span class="pre">titre</span></code> et <code class="docutils literal notranslate"><span class="pre">auteur</span></code>, et les classes dérivées <strong>LivreNumerique</strong> et <strong>LivrePapier</strong> pourraient être créées pour gérer les différents types de livres.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Voiture</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Conducteur</span><span class="w"> </span><span class="n">conducteur</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setConducteur</span><span class="p">(</span><span class="n">Conducteur</span><span class="w"> </span><span class="n">conducteur</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">conducteur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conducteur</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Conducteur</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nom</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
 </div>
-<div class="admonition-remarque admonition">
-<p class="admonition-title">Remarque</p>
-<p>Ces exemples montrent comment la POO permet de modéliser des systèmes complexes en structurant le code de manière organisée et évolutive.</p>
+<div class="admonition-exemple-dassociation-entre-classes admonition">
+<p class="admonition-title">Exemple d’Association entre Classes</p>
+<p>La relation d’association est illustrée ici avec une classe <strong>Voiture</strong> qui peut avoir un <strong>Conducteur</strong>. Dans cet exemple, <strong>Voiture</strong> ne peut pas fonctionner sans conducteur assigné, mais <strong>Conducteur</strong> existe indépendamment.</p>
 </div>
-<p>La POO est donc une approche puissante pour concevoir des logiciels complexes et modulaires, facilitant la gestion et l’évolution des programmes au fur et à mesure des besoins.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Voiture</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Conducteur</span><span class="w"> </span><span class="n">conducteur</span><span class="p">;</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">assignerConducteur</span><span class="p">(</span><span class="n">Conducteur</span><span class="w"> </span><span class="n">conducteur</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">conducteur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conducteur</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Conducteur</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nom</span><span class="p">;</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Conducteur</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nom</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nom</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Utilisation</span>
+<span class="n">Conducteur</span><span class="w"> </span><span class="n">paul</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Conducteur</span><span class="p">(</span><span class="s">&quot;Paul&quot;</span><span class="p">);</span>
+<span class="n">Voiture</span><span class="w"> </span><span class="n">maVoiture</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Voiture</span><span class="p">();</span>
+<span class="n">maVoiture</span><span class="p">.</span><span class="na">assignerConducteur</span><span class="p">(</span><span class="n">paul</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="composition">
+<h3>Composition<a class="headerlink" href="#composition" title="Lien vers cette rubrique">#</a></h3>
+<p>La composition est une relation forte où une classe est une partie intégrante d’une autre classe. La classe contenant ne peut exister sans ses composants.</p>
+<div class="admonition-exemple-de-composition admonition">
+<p class="admonition-title">Exemple de Composition</p>
+<p>Une classe <strong>Maison</strong> composée de <strong>Piece</strong>. Les pièces ne peuvent pas exister sans la maison.</p>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Maison</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Piece</span><span class="o">[]</span><span class="w"> </span><span class="n">pieces</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Maison</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">pieces</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Piece</span><span class="o">[</span><span class="mi">4</span><span class="o">]</span><span class="p">;</span>
+<span class="w">        </span><span class="n">pieces</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Piece</span><span class="p">(</span><span class="s">&quot;Salon&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">pieces</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Piece</span><span class="p">(</span><span class="s">&quot;Cuisine&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Piece</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">nom</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Piece</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nom</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nom</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="agregation">
+<h3>Agrégation<a class="headerlink" href="#agregation" title="Lien vers cette rubrique">#</a></h3>
+<p>L’agrégation est une relation où une classe contient une autre, mais les deux peuvent exister indépendamment.</p>
+<div class="admonition-exemple-d-agregation admonition">
+<p class="admonition-title">Exemple d’Agrégation</p>
+<p>Dans une relation entre une <strong>Université</strong> et des <strong>Etudiants</strong>, les étudiants peuvent exister en dehors de l’université.</p>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Universite</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Etudiant</span><span class="o">&gt;</span><span class="w"> </span><span class="n">etudiants</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">ajouterEtudiant</span><span class="p">(</span><span class="n">Etudiant</span><span class="w"> </span><span class="n">etudiant</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">etudiants</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">etudiant</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="classes-abstraites-et-interfaces">
+<h2>Classes Abstraites et Interfaces<a class="headerlink" href="#classes-abstraites-et-interfaces" title="Lien vers cette rubrique">#</a></h2>
+<section id="classes-abstraites">
+<h3>Classes Abstraites<a class="headerlink" href="#classes-abstraites" title="Lien vers cette rubrique">#</a></h3>
+<p>Une classe abstraite ne peut pas être instanciée et peut contenir des méthodes abstraites, qui sont des méthodes sans corps que les classes dérivées doivent implémenter.</p>
+<div class="admonition-exemple-de-classe-abstraite admonition">
+<p class="admonition-title">Exemple de Classe Abstraite</p>
+<p>Une classe <strong>Forme</strong> abstraite avec une méthode abstraite <code class="docutils literal notranslate"><span class="pre">calculerSurface()</span></code> implémentée différemment dans les classes dérivées.</p>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Forme</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">couleur</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">calculerSurface</span><span class="p">();</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setCouleur</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">couleur</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">couleur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">couleur</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Cercle</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Forme</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">rayon</span><span class="p">;</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">calculerSurface</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">PI</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">rayon</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">rayon</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="interfaces">
+<h3>Interfaces<a class="headerlink" href="#interfaces" title="Lien vers cette rubrique">#</a></h3>
+<p>Les interfaces définissent des comportements sous forme de méthodes que les classes implémentant ces interfaces doivent respecter.</p>
+<div class="admonition-exemple-d-interface admonition">
+<p class="admonition-title">Exemple d’Interface</p>
+<p>Une interface <strong>Dessinable</strong> avec une méthode <code class="docutils literal notranslate"><span class="pre">dessiner()</span></code> que les classes implémentent.</p>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Dessinable</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">dessiner</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">default</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">preparation</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Préparation du dessin&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Rectangle</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Dessinable</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">dessiner</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Dessin d&#39;un rectangle&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition-exemple-dinterface admonition">
+<p class="admonition-title">Exemple d’Interface</p>
+<p>Dans cet exemple, <strong>Jouable</strong> est une interface qui définit les méthodes <code class="docutils literal notranslate"><span class="pre">jouer()</span></code> et <code class="docutils literal notranslate"><span class="pre">arreter()</span></code>. La classe <strong>Musique</strong> implémente cette interface et fournit une implémentation spécifique pour jouer et arrêter une chanson. Cela permet d’avoir un comportement standardisé pour tous les objets qui peuvent être « joués ».</p>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Jouable</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">jouer</span><span class="p">();</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">arreter</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Musique</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Jouable</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">titre</span><span class="p">;</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Musique</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">titre</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">titre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">titre</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">jouer</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Joue &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">titre</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">arreter</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Arrête &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">titre</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Utilisation</span>
+<span class="n">Musique</span><span class="w"> </span><span class="n">chanson</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Musique</span><span class="p">(</span><span class="s">&quot;Ma chanson&quot;</span><span class="p">);</span>
+<span class="n">chanson</span><span class="p">.</span><span class="na">jouer</span><span class="p">();</span>
+<span class="n">chanson</span><span class="p">.</span><span class="na">arreter</span><span class="p">();</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+</section>
 </section>
 </section>
 
@@ -562,13 +1035,29 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-concepts-cles-de-la-programmation-orientee-objet">Les Concepts Clés de la Programmation Orientée Objet</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encapsulation">Encapsulation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heritage">Héritage</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polymorphisme">Polymorphisme</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#abstraction">Abstraction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#avantages-de-la-programmation-orientee-objet">Avantages de la Programmation Orientée Objet</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemples-concrets-d-applications-en-poo">Exemples Concrets d’Applications en POO</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts-fondamentaux-de-la-poo">Concepts Fondamentaux de la POO</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#encapsulation">Encapsulation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#heritage">Héritage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#polymorphisme">Polymorphisme</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#abstraction">Abstraction</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts-avances-classes-et-objets">Concepts Avancés : Classes et Objets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constructeurs">Constructeurs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utilisation-du-mot-cle-this">Utilisation du mot-clé <code class="docutils literal notranslate"><span class="pre">this</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relations-entre-classes">Relations entre Classes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#association">Association</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#composition">Composition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agregation">Agrégation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes-abstraites-et-interfaces">Classes Abstraites et Interfaces</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes-abstraites">Classes Abstraites</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interfaces">Interfaces</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
