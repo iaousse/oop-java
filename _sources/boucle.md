@@ -562,7 +562,7 @@ public class ExceptionPersonnalisee {
 }
 ```
 
-### Exemples avancés
+### Autres exemples
 
 **Exemple 27 : Gestion des exceptions dans une méthode avec `throws`**
 Lorsqu'une méthode peut lever une exception, on peut l'indiquer avec le mot-clé `throws`. Cela signifie que la méthode appelante doit gérer l'exception ou la propager.
