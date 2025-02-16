@@ -69,6 +69,28 @@ System.out.println("Exemple 9 - Le reste de la division de " + g + " par 2 est :
 :::
 
 ---
+### Les Opérations Postfix et Prefix (++)
+
+**Définitions :**
+- **Préfix (++a)** : L'opérateur incrémente la valeur de la variable avant que l'expression ne soit évaluée.
+- **Postfix (a++)** : L'opérateur incrémente la valeur de la variable après que l'expression ne soit évaluée.
+
+**Exemples en Java :**
+
+**Préfix (++a)**
+```java
+int a = 5;
+int b = ++a; // a devient 6, puis b reçoit la valeur de a, donc b vaut aussi 6
+System.out.println("a : " + a + ", b : " + b); // Affiche a : 6, b : 6
+```
+
+**Postfix (a++)**
+```java
+int a = 5;
+int b = a++; // b reçoit la valeur de a, donc b vaut 5, puis a est incrémenté à 6
+System.out.println("a : " + a + ", b : " + b); // Affiche a : 6, b : 5
+```
+
 
 ### Opérateurs de comparaison
 
@@ -189,7 +211,7 @@ boolean nonLogique2 = !condition5; // nonLogique2 vaut true
 System.out.println("Exemple 27 - L'inverse de la condition (10 == 20) est : " + nonLogique2);
 ```
 
-**Exemple 15 : Expression complexe avec `&&` et `||`**
+**Exemple 15 : Expression avec `&&` et `||`**
 ```java
 int age = 25;
 boolean majeur = (age >= 18); // true
@@ -202,3 +224,226 @@ System.out.println("Exemple 29 - L'individu est-il un jeune adulte (entre 18 et 
 ```
 :::
 
+## Saisie des données utilisateur en Java
+
+### Introduction
+
+En Java, la classe `Scanner` est couramment utilisée pour lire les entrées de l'utilisateur à partir de la console. Elle permet de lire différents types de données, y compris les entiers, les flottants et les chaînes de caractères. Voici un guide détaillé sur la façon de permettre à l'utilisateur d'entrer un nombre, ainsi que les raisons derrière chaque étape.
+
+### Étapes 
+
+1. **Importer la Classe Scanner :**
+   - Avant d'utiliser la classe `Scanner`, vous devez l'importer. Cela se fait en utilisant l'instruction `import java.util.Scanner;`.
+   - **Raison :** La classe `Scanner` se trouve dans le package `java.util`, qui n'est pas automatiquement importé.
+
+   ```java
+   import java.util.Scanner;
+   ```
+
+2. **Créer une Instance de Scanner :**
+   - Vous devez créer une instance de la classe `Scanner` en passant `System.in` comme argument au constructeur de `Scanner`.
+   - **Raison :** `System.in` est l'entrée standard (généralement le clavier) à partir de laquelle le `Scanner` lira les données.
+
+   ```java
+   Scanner scanner = new Scanner(System.in);
+   ```
+
+3. **Afficher un Message à l'Utilisateur :**
+   - Avant de lire l'entrée de l'utilisateur, il est utile d'afficher un message demandant à l'utilisateur d'entrer un nombre.
+   - **Raison :** Cela informe l'utilisateur sur ce qu'il doit faire.
+
+   ```java
+   System.out.println("Veuillez entrer un nombre :");
+   ```
+
+4. **Lire l'Entrée de l'Utilisateur :**
+   - Utilisez la méthode `nextInt()` de l'objet `Scanner` pour lire un entier à partir de l'entrée de l'utilisateur.
+   - **Raison :** `nextInt()` lit l'entrée suivante comme un entier. Si l'utilisateur entre une valeur qui n'est pas un entier, une `InputMismatchException` sera lancée.
+
+   ```java
+   int nombre = scanner.nextInt();
+   ```
+
+5. **Afficher le Nombre Entré :**
+   - Après avoir lu l'entrée de l'utilisateur, vous pouvez afficher le nombre pour confirmer que la lecture s'est bien déroulée.
+   - **Raison :** Cela permet de vérifier que l'entrée a été lue correctement.
+
+   ```java
+   System.out.println("Vous avez entré le nombre : " + nombre);
+   ```
+
+6. **Fermer le Scanner :**
+   - Une fois que vous avez terminé d'utiliser le `Scanner`, il est recommandé de le fermer en appelant `scanner.close()`.
+   - **Raison :** Cela libère les ressources associées au `Scanner`.
+
+   ```java
+   scanner.close();
+   ```
+
+### Exemple 
+
+Voici un exemple complet qui met en œuvre toutes les étapes ci-dessus :
+
+```java
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        // Créer une instance de Scanner
+        Scanner scanner = new Scanner(System.in);
+        
+        // Afficher un message à l'utilisateur
+        System.out.println("Veuillez entrer un nombre :");
+        
+        // Lire l'entrée de l'utilisateur
+        int nombre = scanner.nextInt();
+        
+        // Afficher le nombre entré
+        System.out.println("Vous avez entré le nombre : " + nombre);
+        
+        // Fermer le Scanner
+        scanner.close();
+    }
+}
+```
+
+
+## Exercices
+
+1. **Calculer le résultat de l'expression suivante et afficher la valeur finale des variables :**
+   - `int a = 5, b = 10, c = 0;`
+   - `c = a++ + b;`
+   - `c = ++a + b;`
+
+2. **Évaluer les expressions logiques suivantes et afficher le résultat :**
+   - `int x = 5, y = 8;`
+   - `boolean res1 = (x < y) && (++x == y);`
+   - `boolean res2 = (x == y) || (y++ > x);`
+
+3. **Calculer le résultat de l'expression suivante et afficher la valeur finale des variables :**
+   - `int a = 3, b = 6, c = 1;`
+   - `c = ++a * b--;`
+
+4. **Comparer deux valeurs en utilisant des opérateurs logiques et afficher le résultat :**
+   - `int m = 7, n = 7;`
+   - `boolean res = (m == n) && (m++ < ++n);`
+
+5. **Calculer le résultat de l'expression suivante et afficher la valeur finale des variables :**
+   - `int p = 10, q = 3;`
+   - `p = p++ + --q * p;`
+
+6. **Combiner des opérations arithmétiques et logiques pour évaluer les expressions et afficher le résultat :**
+   - `int u = 4, v = 9;`
+   - `boolean res3 = (u++ + v > 10) || (--v - u <= 3);`
+
+1. **Calculer le résultat de l'expression suivante et afficher la valeur finale des variables :**
+   - `int a = 3, b = 5, c = 0;`
+   - `c = a + b * 2;`
+
+2. **Calculer le résultat de l'expression suivante en utilisant les parenthèses et afficher le résultat :**
+   - `int a = 3, b = 5;`
+   - `int resultat = (a + b) * 2;`
+
+3. **Évaluer l'expression suivante et afficher la valeur finale de la variable :**
+   - `int x = 10;`
+   - `x = x++ * 2 + 3;`
+
+4. **Calculer le résultat de l'expression suivante et afficher la valeur finale des variables :**
+   - `int a = 4, b = 7, c = 10;`
+   - `c = a * b - c / 2;`
+
+5. **Calculer le résultat de l'expression suivante en utilisant les opérateurs de pré-incrémentation et de post-incrémentation :**
+   - `int a = 5, b = 6;`
+   - `int resultat = ++a * b--;`
+
+6. **Évaluer l'expression suivante et afficher la valeur finale des variables :**
+   - `int p = 8, q = 4;`
+   - `p = p / 2 * (q + 3) - p++;`
+
+
+## Solution
+
+1. **Calculer le résultat de l'expression suivante et afficher la valeur finale des variables :**
+   ```java
+   int a = 5, b = 10, c = 0;
+   c = a++ + b; // c = 5 + 10 = 15, a devient 6
+   c = ++a + b; // a devient 7, c = 7 + 10 = 17
+   System.out.println("a : " + a + ", b : " + b + ", c : " + c);
+   ```
+
+2. **Évaluer les expressions logiques suivantes et afficher le résultat :**
+   ```java
+   int x = 5, y = 8;
+   boolean res1 = (x < y) && (++x == y); // res1 = true, x devient 6
+   boolean res2 = (x == y) || (y++ > x); // res2 = true, y devient 9
+   System.out.println("res1 : " + res1 + ", res2 : " + res2);
+   ```
+
+3. **Calculer le résultat de l'expression suivante et afficher la valeur finale des variables :**
+   ```java
+   int a = 3, b = 6, c = 1;
+   c = ++a * b--; // a devient 4, c = 4 * 6 = 24, b devient 5
+   System.out.println("a : " + a + ", b : " + b + ", c : " + c);
+   ```
+
+4. **Comparer deux valeurs en utilisant des opérateurs logiques et afficher le résultat :**
+   ```java
+   int m = 7, n = 7;
+   boolean res = (m == n) && (m++ < ++n); // res = true, m devient 8, n devient 8
+   System.out.println("m : " + m + ", n : " + n + ", res : " + res);
+   ```
+
+5. **Calculer le résultat de l'expression suivante et afficher la valeur finale des variables :**
+   ```java
+   int p = 10, q = 3;
+   p = p++ + --q * p; // q devient 2, p = 10 + 2 * 10 = 30
+   System.out.println("p : " + p + ", q : " + q);
+   ```
+
+6. **Combiner des opérations arithmétiques et logiques pour évaluer les expressions et afficher le résultat :**
+   ```java
+   int u = 4, v = 9;
+   boolean res3 = (u++ + v > 10) || (--v - u <= 3); // res3 = true, u devient 5, v devient 8
+   System.out.println("u : " + u + ", v : " + v + ", res3 : " + res3);
+   ```
+1. **Calculer le résultat de l'expression suivante et afficher la valeur finale des variables :**
+   ```java
+   int a = 3, b = 5, c = 0;
+   c = a + b * 2; // c = 3 + 5 * 2 = 3 + 10 = 13
+   System.out.println("a : " + a + ", b : " + b + ", c : " + c);
+   ```
+
+2. **Calculer le résultat de l'expression suivante en utilisant les parenthèses et afficher le résultat :**
+   ```java
+   int a = 3, b = 5;
+   int resultat = (a + b) * 2; // resultat = (3 + 5) * 2 = 8 * 2 = 16
+   System.out.println("a : " + a + ", b : " + b + ", resultat : " + resultat);
+   ```
+
+3. **Évaluer l'expression suivante et afficher la valeur finale de la variable :**
+   ```java
+   int x = 10;
+   x = x++ * 2 + 3; // x = 10 * 2 + 3 = 20 + 3 = 23, puis x devient 11
+   System.out.println("x : " + x);
+   ```
+
+4. **Calculer le résultat de l'expression suivante et afficher la valeur finale des variables :**
+   ```java
+   int a = 4, b = 7, c = 10;
+   c = a * b - c / 2; // c = 4 * 7 - 10 / 2 = 28 - 5 = 23
+   System.out.println("a : " + a + ", b : " + b + ", c : " + c);
+   ```
+
+5. **Calculer le résultat de l'expression suivante en utilisant les opérateurs de pré-incrémentation et de post-incrémentation :**
+   ```java
+   int a = 5, b = 6;
+   int resultat = ++a * b--; // a devient 6, resultat = 6 * 6 = 36, puis b devient 5
+   System.out.println("a : " + a + ", b : " + b + ", resultat : " + resultat);
+   ```
+
+6. **Évaluer l'expression suivante et afficher la valeur finale des variables :**
+   ```java
+   int p = 8, q = 4;
+   p = p / 2 * (q + 3) - p++; // p = 8 / 2 * (4 + 3) - 8 = 4 * 7 - 8 = 28 - 8 = 20, puis p devient 9
+   System.out.println("p : " + p + ", q : " + q);
+   ```

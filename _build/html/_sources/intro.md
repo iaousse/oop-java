@@ -1,5 +1,12 @@
 # Introduction à la Programmation Orientée Objet avec Java
 
+```{image} qr_code.png
+:alt: codeqr
+:class: bg-primary mb-1
+:width: 500px
+:align: center
+```
+
 Ce cours traite de la **programmation orientée objet (POO) avec Java** et a pour objectif d’introduire les concepts fondamentaux de la POO, une approche essentielle en ingénierie logicielle. Java sera utilisé comme langage de programmation principal pour illustrer ces concepts, et une brève introduction au langage Java sera fournie en début de cours pour poser les bases nécessaires.
 
 [//]: # (## Utilisation de Jupyter Notebook et Google Colab)
